@@ -30,6 +30,7 @@ $resultado = mysqli_query($conexao, $sql_listar);
             <td><?php echo $dados["nome"]; ?> </td>
             <td><?php echo $dados["email"]; ?> </td>
             <td><?php echo $dados["telefone"]; ?> </td>
+            <td><a href="excluir_contato.php?id=<?php echo $dados['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a></td>
         </tr>
         <?php endwhile; ?>
     </tbody>
