@@ -31,6 +31,7 @@ $resultado = mysqli_query($conexao, $sql_listar);
             <td><?php echo $dados["email"]; ?> </td>
             <td><?php echo $dados["telefone"]; ?> </td>
             <td><a href="excluir_contato.php?id=<?php echo $dados['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a></td>
+            <td><a href="editar_contato.php?id=<?php echo $dados['id']; ?>">Editar</a></td>
         </tr>
         <?php endwhile; ?>
     </tbody>
@@ -40,4 +41,3 @@ $resultado = mysqli_query($conexao, $sql_listar);
 </html>
 
 
-<!-- INSERT INTO `contatos` (`id`, `nome`, `email`, `telefone`) VALUES (NULL, 'Giovanni', 'Giovanni@gmail.com', '12345678'); -->
