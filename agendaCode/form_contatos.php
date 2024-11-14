@@ -8,14 +8,17 @@
 <body>
     <form action="cadastro_contato.php" method="post">
         <label for="nome_contato">Nome:</label>
-        <input type="text" name="nome_contato" id="nome_contato">
+        <input type="text" name="nome_contato" id="nome_contato" required>
+
         <label for="email_contato">Email:</label>
         <input type="email" name="email_contato" id="email_contato">
+
         <label for="telefone_contato">Telefone:</label>
-        <input type="tel" name="telefone_contato" id="telefone_contato">
+        <input type="tel" name="telefone_contato" id="telefone_contato" pattern="^\(\d{2}\) \d{5}-\d{4}$" title="Por favor, informe o número no padrão (11) 11111-1111">
+
         <input type="submit" value="Adicionar contato">
     </form>
 
-    <a href="agenda.php">agenda.php</a>
+    <a href="agenda.php">Ir para a agenda de contatos</a>
 </body>
 </html>

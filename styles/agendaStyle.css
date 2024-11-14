@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-height: 100vh;  
+}
+
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    
+}
+table{
+    border-radius: 10px;
+}
+th{
+    background-color: aquamarine;
+}
+
+.edit_delete{
+    text-decoration: none;
+    color: blue;
+}

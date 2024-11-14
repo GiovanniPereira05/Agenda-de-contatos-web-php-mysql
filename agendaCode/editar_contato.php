@@ -26,10 +26,9 @@ $dados_id = mysqli_fetch_assoc($resultado_consulta_id);
         <label for="email_contato">Email:</label>
         <input type="email" name="email_contato" id="email_contato" value="<?php echo $dados_id["email"]?>">
         <label for="telefone_contato">Telefone:</label>
-        <input type="tel" name="telefone_contato" id="telefone_contato" value="<?php echo $dados_id["telefone"]?>">
+        <input type="tel" name="telefone_contato" id="telefone_contato" pattern="^\(\d{2}\) \d{5}-\d{4}$" title="Por favor, informe o número no padrão (11) 11111-1111" value="<?php echo $dados_id["telefone"]?> ">
         <input type="submit" value="Adicionar contato">
     </form>
-
     <a href="agenda.php">agenda.php</a>
 </body>
 </html>
