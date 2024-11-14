@@ -1,33 +1,32 @@
 <?php
 
-    include "../agendaCode/database.php";
-    session_start();
+include "../agendaCode/database.php";
+session_start();
 
-    // verifica se o email ou a senha estão vazios
-    if(isset($_POST['email']) || (isset($_POST['senha']))){
-        $email_usuario = $_POST['email'];
-        $senha_usuario = $_POST['senha'];
+if (isset($_POST['email']) && isset($_POST['senha'])) {
+    $email_usuario = $_POST['email'];
+    $senha_usuario = $_POST['senha'];
 
-        $sql_select_usuario = "SELECT * FROM usuarios WHERE email = '$email_usuario'";
-        $resultado = mysqli_query($conexao, $sql_select_usuario);
+    $sql_select_usuario = "SELECT * FROM usuarios WHERE email = '$email_usuario'";
+    $resultado = mysqli_query($conexao, $sql_select_usuario);
 
-        if(mysqli_num_rows($resultado) > 0){
-            $dados_usuario = mysqli_fetch_assoc($resultado);
-            
-            if (password_verify($senha_usuario, $dados_usuario["senha"])){
-                $_SESSION['user_id'] = $dados_usuario['id'];
-                header("location: ../agendaCode/agenda.php");
-            }
-            else{
-                echo "senha incorreta";
-            }
+    if (mysqli_num_rows($resultado) > 0) {
+        $dados_usuario = mysqli_fetch_assoc($resultado);
+
+        if (password_verify($senha_usuario, $dados_usuario['senha'])) {
+            $_SESSION['id_usuario'] = $dados_usuario['id']; 
+
+            header("Location: ../agendaCode/agenda.php");
+            exit();
+        } else {
+            echo "Senha incorreta!";
         }
-        else{
-            echo "usuario não encontrado";
-        }
-        }
-
+    } else {
+        echo "Usuário não encontrado!";
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

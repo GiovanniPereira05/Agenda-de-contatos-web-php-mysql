@@ -1,9 +1,19 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../loginCode/tela_de_login.php");
+    exit();
+}
 
 include "database.php";
 
-$sql_listar = "SELECT * FROM contatos";
-$resultado = mysqli_query($conexao, $sql_listar);
+$id_usuario = $_SESSION['id_usuario'];
+
+$sql_listar_contatos = "SELECT * FROM contatos WHERE id_usuario = '$id_usuario'";
+$resultado = mysqli_query($conexao, $sql_listar_contatos);
+
+
 
 ?>
 
