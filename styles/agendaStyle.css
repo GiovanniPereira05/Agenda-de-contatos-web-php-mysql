@@ -4,6 +4,8 @@ body{
     align-items: center;
     margin: auto;
     min-height: 100vh;  
+    flex-direction: column;
+    background-color: #3691fa;
 }
 
 
@@ -17,8 +19,12 @@ table{
     border-radius: 10px;
 }
 th{
-    background-color: aquamarine;
+    background-color: #69a9f3;
 }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(odd) {background-color: #ffffff;}
+
 
 .edit_delete{
     text-decoration: none;

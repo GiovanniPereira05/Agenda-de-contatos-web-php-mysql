@@ -50,6 +50,7 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
     </tbody>
 </table>
     <a href="form_contatos.php">formulario</a>
+    <a href="../loginCode/index.php">Voltar pra tela de login</a>
 </body>
             <script src="scripts/script.js"></script>
 </html>

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/loginStyle.css">
 </head>
 <body>
+<main id="formContainer">
     <form action="cadastro_contato.php" method="post">
         <label for="nome_contato">Nome:</label>
         <input type="text" name="nome_contato" id="nome_contato" required>
@@ -18,7 +20,7 @@
 
         <input type="submit" value="Adicionar contato">
     </form>
-
+</main>
     <a href="agenda.php">Ir para a agenda de contatos</a>
 </body>
 </html>

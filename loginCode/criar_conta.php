@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../styles/loginStyle.css">
 </head>
 <body>
+<main id="formContainer">
+<h1>Criar conta</h1>
 <form action="cadastro_usuario.php" method="post">
     <label for="email">Email </label>
     <input type="email" name="email" id="email">
@@ -15,6 +17,7 @@
     <input type="password" name="senha" id="senha">
 
     <input type="submit" value="Criar conta">
+</main>
 </form>
 </body>
 </html>
