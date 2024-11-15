@@ -19,6 +19,7 @@ session_start();
 
 <body>
 <main id="formContainer">
+    
     <h1>Sign In</h1>
         <form action="" method="post">
             <label for="email">Email </label>
@@ -31,6 +32,8 @@ session_start();
             <div id="authLinks">
             <a href="criar_conta.php">Criar conta</a>
             <a href="">Esqueci minha senha</a>
+    <button type="button" onclick="darkMode()" id="darkModeButton">Dark Mode</button>
+
             </div>
 
 
@@ -59,6 +62,7 @@ session_start();
             ?>
         </form>
     </main>
+<script src="../scripts/script.js"></script>
 </body>
 
 </html>

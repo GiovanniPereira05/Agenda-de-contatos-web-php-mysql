@@ -28,19 +28,20 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
     <title>Agenda de Contatos</title>
     <link rel="stylesheet" href="../styles/agendaStyle.css">
 </head>
-<body>
+<body class="body">
+    <button onclick="darkMode()" id="darkModeButton">Dark Mode</button>
     <form action="" method="post">
-    <input type="text" name="pesquisa" id="pesquisa">
+    <input type="text" name="pesquisa" id="pesquisa" value="<?php if (isset($pesquisa))echo $pesquisa; ?>">
     <input type="submit" value="Pesquisar">
     </form>
 <table>
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th></th>
-            <th></th>
+            <th class="thAgenda">Nome</th>
+            <th class="thAgenda">Email</th>
+            <th class="thAgenda">Telefone</th>
+            <th class="thAgenda"></th>
+            <th class="thAgenda"></th>
         </tr>
         </thead>
     <tbody>
@@ -57,5 +58,7 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
 </table>
     <a href="form_contatos.php">Formulario</a>
     <a href="../loginCode/index.php">Voltar pra tela de login</a>
+
+    <script src="../scripts/script.js"></script>
 </body>
 </html>

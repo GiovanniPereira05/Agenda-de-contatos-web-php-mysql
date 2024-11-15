@@ -9,6 +9,7 @@
 <body>
 <main id="formContainer">
 <h1>Criar conta</h1>
+<button onclick="darkMode()" id="darkModeButton">Dark Mode</button>
 <form action="cadastro_usuario.php" method="post">
     <label for="email">Email </label>
     <input type="email" name="email" id="email">
@@ -20,6 +21,6 @@
     <a href="index.php">Voltar</a>
 </form>
 </main>
-
+<script src="../scripts/script.js"></script>
 </body>
 </html>

@@ -21,7 +21,8 @@ $dados_id = mysqli_fetch_assoc($resultado_consulta_id);
     <link rel="stylesheet" href="../styles/loginStyle.css">
 </head>
 <body>
-<main id="formContainer">
+    <main id="formContainer">
+    <button onclick="darkMode()" id="darkModeButton">Dark Mode</button>
     <form action="cadastro_contato.php" method="post">
         <label for="nome_contato">Nome:</label>
         <input type="text" name="nome_contato" id="nome_contato" value="<?php echo $dados_id["nome"]?>">
@@ -34,5 +35,6 @@ $dados_id = mysqli_fetch_assoc($resultado_consulta_id);
     <a href="agenda.php">agenda.php</a>
     
 </main>
+<script src="../scripts/script.js"></script>
 </body>
 </html>

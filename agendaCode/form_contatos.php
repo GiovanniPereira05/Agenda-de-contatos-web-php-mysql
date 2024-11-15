@@ -8,6 +8,7 @@
 </head>
 <body>
 <main id="formContainer">
+    <button onclick="darkMode()" id="darkModeButton">Dark Mode</button>
     <form action="cadastro_contato.php" method="post">
         <label for="nome_contato">Nome:</label>
         <input type="text" name="nome_contato" id="nome_contato" required>
@@ -22,5 +23,6 @@
     </form>
 </main>
     <a href="agenda.php">Ir para a agenda de contatos</a>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
