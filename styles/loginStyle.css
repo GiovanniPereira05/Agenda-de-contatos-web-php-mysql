@@ -40,7 +40,9 @@ form label {
 }
 
 input[type="email"],
-input[type="password"]{
+input[type="password"],
+input[type="text"],
+input[type="tel"]{
     border-radius: 10px;
     padding: 5px;
 }

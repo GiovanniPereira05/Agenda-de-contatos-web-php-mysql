@@ -10,16 +10,18 @@ include "database.php";
 
 $id_usuario = $_SESSION['id_usuario'];
 
-$sql_listar_contatos = "SELECT * FROM contatos WHERE id_usuario = '$id_usuario'";
+if (isset($_POST["pesquisa"])){
+            $pesquisa = $_POST["pesquisa"];
+            $sql_listar_contatos = "SELECT * FROM contatos WHERE id_usuario = '$id_usuario' AND nome LIKE '%$pesquisa%'";
+} else{
+    $sql_listar_contatos = "SELECT * FROM contatos WHERE id_usuario = '$id_usuario'";
+}
+
 $resultado = mysqli_query($conexao, $sql_listar_contatos);
-
-
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +29,10 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
     <link rel="stylesheet" href="../styles/agendaStyle.css">
 </head>
 <body>
+    <form action="" method="post">
+    <input type="text" name="pesquisa" id="pesquisa">
+    <input type="submit" value="Pesquisar">
+    </form>
 <table>
     <thead>
         <tr>
@@ -36,7 +42,7 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
             <th></th>
             <th></th>
         </tr>
-    </thead>
+        </thead>
     <tbody>
         <?php while($dados = mysqli_fetch_assoc($resultado)): ?>
         <tr>
@@ -49,10 +55,7 @@ $resultado = mysqli_query($conexao, $sql_listar_contatos);
         <?php endwhile; ?>
     </tbody>
 </table>
-    <a href="form_contatos.php">formulario</a>
+    <a href="form_contatos.php">Formulario</a>
     <a href="../loginCode/index.php">Voltar pra tela de login</a>
 </body>
-            <script src="scripts/script.js"></script>
 </html>
-
-

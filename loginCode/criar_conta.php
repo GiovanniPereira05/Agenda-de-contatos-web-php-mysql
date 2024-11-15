@@ -17,7 +17,9 @@
     <input type="password" name="senha" id="senha">
 
     <input type="submit" value="Criar conta">
-</main>
+    <a href="index.php">Voltar</a>
 </form>
+</main>
+
 </body>
 </html>
